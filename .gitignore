@@ -1,4 +1,5 @@
 dmenu
+stest
 config.h
 patches
 *.o
