@@ -1,0 +1,6 @@
+dmenu
+config.h
+patches
+*.o
+*.rej
+*.orig
