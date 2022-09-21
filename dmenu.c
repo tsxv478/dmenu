@@ -695,7 +695,7 @@ setup(void)
 			mw = wa.width;
 		}
 	}
-	inputw = mw / 4; /* input width: 25% of monitor width */
+	inputw = mw / 5; /* input width: 20% of monitor width */
 	match();
 
 	/* create menu window */
