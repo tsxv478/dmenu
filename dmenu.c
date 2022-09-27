@@ -55,6 +55,8 @@ static Clr *scheme[SchemeLast];
 
 #include "config.h"
 
+static unsigned int border_width = 0;
+
 static int (*fstrncmp)(const char *, const char *, size_t) = strncmp;
 static char *(*fstrstr)(const char *, const char *) = strstr;
 
@@ -669,6 +671,7 @@ setup(void)
 
 		if (centered) {
 			mw = centered_width;
+			border_width = bw;
 			x = info[i].x_org + ((info[i].width  - mw) / 2);
 			y = info[i].y_org + ((info[i].height - mh) / 2);
 		} else {
@@ -687,6 +690,7 @@ setup(void)
 	
 		if (centered) {
 			mw = centered_width;
+			border_width = bw;
 			x = (wa.width  - mw) / 2;
 			y = (wa.height - mh) / 2;
 		} else {
@@ -783,7 +787,7 @@ main(int argc, char *argv[])
 		else if (!strcmp(argv[i], "-w"))   /* embedding window id */
 			embed = argv[++i];
 		else if (!strcmp(argv[i], "-bw"))
-			border_width = atoi(argv[++i]); /* border width */
+			border_width = bw = atoi(argv[++i]); /* border width */
 		else
 			usage();
 
