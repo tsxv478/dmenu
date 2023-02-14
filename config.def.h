@@ -24,3 +24,6 @@ static const char worddelimiters[] = " ";
 
 /* Size of the window border when centered */
 static unsigned int bw = 3;
+
+/* Pixels to add to the line height */
+static unsigned int lineheight = 2;
