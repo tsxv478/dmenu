@@ -626,6 +626,7 @@ setup(void)
 	Window w, dw, *dws;
 	XWindowAttributes wa;
 	XClassHint ch = {"dmenu", "dmenu"};
+	XClassHint chc = {"dmenu_c", "dmenu_c"};
 #ifdef XINERAMA
 	XineramaScreenInfo *info;
 	Window pw;
@@ -711,8 +712,11 @@ setup(void)
 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
 	if (border_width)
 		XSetWindowBorder(dpy, win, scheme[SchemeSel][ColBg].pixel);
-	XSetClassHint(dpy, win, &ch);
 
+	if (centered)
+		XSetClassHint(dpy, win, &chc);
+	else
+		XSetClassHint(dpy, win, &ch);
 
 	/* input methods */
 	if ((xim = XOpenIM(dpy, NULL, NULL, NULL)) == NULL)
