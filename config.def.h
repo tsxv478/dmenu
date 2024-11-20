@@ -23,7 +23,7 @@ static unsigned int lines = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border when centered */
-static unsigned int bw = 3;
+static unsigned int bw = 2;
 
 /* Pixels to add to the line height */
 static unsigned int lineheight = 2;
